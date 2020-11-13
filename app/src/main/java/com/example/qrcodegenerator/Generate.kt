@@ -19,7 +19,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.io.File
 import java.io.FileOutputStream
-import java.time.Duration
 
 class Generate : AppCompatActivity(), View.OnClickListener {
 
