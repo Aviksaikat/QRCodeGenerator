@@ -23,7 +23,7 @@ import java.io.FileOutputStream
 class Generate : AppCompatActivity(), View.OnClickListener {
 
     private var qrImage : Bitmap? = null
-    val EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 1
+    private val EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,9 +59,9 @@ class Generate : AppCompatActivity(), View.OnClickListener {
             {
                 if(layout_vCard.visibility == View.VISIBLE) {
 
-                    if(input_name.text.toString().isNullOrEmpty() && input_email.text.toString().isNullOrEmpty()
-                        && input_address.text.toString().isNullOrEmpty() && input_phoneNumber.text.toString().isNullOrEmpty()
-                        && input_website.text.toString().isNullOrEmpty())
+                    if(input_name.text.toString().isEmpty() && input_email.text.toString().isNullOrEmpty()
+                        && input_address.text.toString().isEmpty() && input_phoneNumber.text.toString().isNullOrEmpty()
+                        && input_website.text.toString().isEmpty())
                     {
                         Toast.makeText(applicationContext,"All fields cannot be empty" , Toast.LENGTH_SHORT).show()
                     }
@@ -71,7 +71,7 @@ class Generate : AppCompatActivity(), View.OnClickListener {
                     }
                 }
                 else if(input_text.visibility == View.VISIBLE) {
-                    if(!input_text.text.toString().isNullOrEmpty())
+                    if(!input_text.text.toString().isEmpty())
                     {
                         generateQRCode()
                     }
@@ -133,11 +133,7 @@ class Generate : AppCompatActivity(), View.OnClickListener {
     fun checkPermissionForExternalStorage(): Boolean {
 
         val result = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-        if (result == PackageManager.PERMISSION_GRANTED) {
-            return true
-        } else {
-            return false
-        }
+        return result == PackageManager.PERMISSION_GRANTED
     }
     //funtion for saving image into gallery
     fun saveImage(image: Bitmap): String {
