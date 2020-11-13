@@ -21,7 +21,7 @@ import java.io.File
 import java.io.FileOutputStream
 import java.time.Duration
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class Generate : AppCompatActivity(), View.OnClickListener {
 
     private var qrImage : Bitmap? = null
     val EXTERNAL_STORAGE_PERMISSION_REQUEST_CODE = 1

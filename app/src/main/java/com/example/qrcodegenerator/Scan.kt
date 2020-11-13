@@ -3,7 +3,7 @@ package com.example.qrcodegenerator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class App2Activity : AppCompatActivity() {
+class Scan : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)

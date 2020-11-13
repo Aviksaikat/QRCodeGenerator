@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 
-class AppActivity : Activity() {
+class HomePage : Activity() {
     var button: Button? = null
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,13 +19,13 @@ class AppActivity : Activity() {
         val context1: Context = this
         button = findViewById<View>(R.id.scan) as Button
         button!!.setOnClickListener {
-            val intent = Intent(context1, App2Activity::class.java)
+            val intent = Intent(context1, Scan::class.java)
             startActivity(intent)
         }
         val context: Context = this
         button = findViewById<View>(R.id.gen) as Button
         button!!.setOnClickListener {
-            val intent = Intent(context, MainActivity::class.java)
+            val intent = Intent(context, Generate::class.java)
             startActivity(intent)
         }
     }
